@@ -1,6 +1,6 @@
 {
-  "name": "gpxparser",
-  "version": "3.0.9",
+  "name": "mahaseel-gpxparser",
+  "version": "1.0.0",
   "description": "GPX file parser",
   "main": "dist/GPXParser.min.js",
   "scripts": {
@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Luuka/GPXParser.js.git"
+    "url": "git+https://github.com/Mahaseel-Lab/GPXParser.js.git"
   },
   "keywords": [
     "gpx",
@@ -24,7 +24,7 @@
   "bugs": {
     "url": "https://github.com/Luuka/GPXParser.js/issues"
   },
-  "homepage": "https://github.com/Luuka/GPXParser.js#readme",
+  "homepage": "https://github.com/Mahaseel-Lab/GPXParser.js#readme",
   "dependencies": {
     "jsdom": "^21.1.0"
   },
