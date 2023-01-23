@@ -4,8 +4,9 @@
   "description": "GPX file parser",
   "main": "dist/GPXParser.min.js",
   "scripts": {
-    "build": "tsc",
-    "test": "nyc mocha"
+    "build": "gulp build",
+    "test": "nyc mocha",
+    "prepare": "husky install"
   },
   "repository": {
     "type": "git",
@@ -33,6 +34,7 @@
     "gulp-jsdoc3": "^2.0.0",
     "gulp-minify": "^3.1.0",
     "gulp-mocha": "^7.0.2",
+    "husky": "^8.0.3",
     "jsdoc": "^3.6.3",
     "jsdom": "^21.1.0",
     "mocha": "^6.2.2",
