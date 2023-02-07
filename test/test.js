@@ -30,13 +30,13 @@ describe("GPX parser", function () {
     assert.equal("A full featured gpx demo file", parsedMetadata.desc);
     assert.equal("2020-01-12T21:32:52", parsedMetadata.time);
     assert.equal("Demo Author", parsedMetadata.author.name);
-    // assert.equal("demo", parsedMetadata.author.email.id);
-    // assert.equal("example.com", parsedMetadata.author.email.domain);
-    // assert.equal("http://example.com", parsedMetadata.author.link.href);
-    // assert.equal("Web", parsedMetadata.author.link.type);
-    // assert.equal("http://example.com", parsedMetadata.link.href);
-    // assert.equal("Author website", parsedMetadata.link.text);
-    // assert.equal("Web", parsedMetadata.link.type);
+    assert.equal("demo", parsedMetadata.author.email.id);
+    assert.equal("example.com", parsedMetadata.author.email.domain);
+    assert.equal("http://example.com", parsedMetadata.author.link.href);
+    assert.equal("Web", parsedMetadata.author.link.type);
+    assert.equal("http://example.com", parsedMetadata.link.href);
+    assert.equal("Author website", parsedMetadata.link.text);
+    assert.equal("Web", parsedMetadata.link.type);
   });
 
   it("should parse waypoints", function () {
@@ -61,173 +61,173 @@ describe("GPX parser", function () {
     assert.equal("Route", wpt1.desc);
   });
 
-  // it('should parse tracks', function(){
-  //     let parsedTracks = parser.tracks;
-  //
-  //     assert.equal(1, parsedTracks.length);
-  //
-  //     let track = parsedTracks[0];
-  //
-  //     assert.equal('Track', track.name);
-  //     assert.equal('Bridge', track.cmt);
-  //     assert.equal('Demo track', track.desc);
-  //     assert.equal('GPX Parser', track.src);
-  //     assert.equal('1', track.number);
-  //     assert.equal('MTB', track.type);
-  //
-  //     assert.equal('http://example.com', track.link.href);
-  //     assert.equal('Author website', track.link.text);
-  //     assert.equal('Web', track.link.type);
-  //
-  //     assert.equal(6955.702190644043, track.distance.total);
-  //     assert.equal(205, track.distance.cumul.length);
-  //
-  //     assert.equal(31.6, track.elevation.max);
-  //     assert.equal(4.09, track.elevation.min);
-  //     assert.equal(71.03999999999998, track.elevation.pos);
-  //     assert.equal(69.44000000000001, track.elevation.neg);
-  //     assert.equal(14.148731707317081, track.elevation.avg);
-  //
-  //     assert.equal(205, track.points.length);
-  //
-  //     track.points.forEach(function(pt){
-  //         assert.notEqual(pt.lat, undefined);
-  //         assert.notEqual(pt.lon, undefined);
-  //         assert.notEqual(pt.ele, undefined);
-  //         assert(pt.time == null);
-  //     });
-  // });
-  //
-  // it('should parse routes', function(){
-  //     let parsedRoutes = parser.routes;
-  //
-  //     assert.equal(1, parsedRoutes.length);
-  //
-  //     let route = parsedRoutes[0];
-  //
-  //     assert.equal('Track', route.name);
-  //     assert.equal('Bridge', route.cmt);
-  //     assert.equal('Demo track', route.desc);
-  //     assert.equal('GPX Parser', route.src);
-  //     assert.equal('1', route.number);
-  //     assert.equal('MTB', route.type);
-  //
-  //     assert.equal('http://example.com', route.link.href);
-  //     assert.equal('Author website', route.link.text);
-  //     assert.equal('Web', route.link.type);
-  //
-  //     assert.equal(6955.702190644043, route.distance.total);
-  //     assert.equal(205, route.distance.cumul.length);
-  //
-  //     assert.equal(31.6, route.elevation.max);
-  //     assert.equal(4.09, route.elevation.min);
-  //     assert.equal(71.03999999999998, route.elevation.pos);
-  //     assert.equal(69.44000000000001, route.elevation.neg);
-  //     assert.equal(14.148731707317081, route.elevation.avg);
-  //
-  //     assert.equal(205, route.points.length);
-  //
-  //     route.points.forEach(function(pt){
-  //         assert.notEqual(pt.lat, undefined);
-  //         assert.notEqual(pt.lon, undefined);
-  //         assert.notEqual(pt.ele, undefined);
-  //         assert(pt.time == null);
-  //     });
-  // });
-  //
-  // it('GetElementValue should be null', function(){
-  //     let elemValue = parser.getElementValue(parser.xmlSource, 'inexistant');
-  //     assert.equal(null, elemValue);
-  // });
-  //
-  // it('should compute slopes', function(){
-  //     let parserSlopesIdx = new gpxParser();
-  //
-  //     parserSlopesIdx.parse(gpxDemo);
-  //     assert.equal(204, parserSlopesIdx.tracks[0].slopes.length);
-  // });
+  it("should parse tracks", function () {
+    let parsedTracks = parser.tracks;
+
+    assert.equal(1, parsedTracks.length);
+
+    let track = parsedTracks[0];
+
+    assert.equal("Track", track.name);
+    assert.equal("Bridge", track.cmt);
+    assert.equal("Demo track", track.desc);
+    assert.equal("GPX Parser", track.src);
+    assert.equal("1", track.number);
+    assert.equal("MTB", track.type);
+
+    assert.equal("http://example.com", track.link.href);
+    assert.equal("Author website", track.link.text);
+    assert.equal("Web", track.link.type);
+
+    assert.equal(6955.702190644043, track.distance.total);
+    assert.equal(205, track.distance.cumul.length);
+
+    assert.equal(31.6, track.elevation.max);
+    assert.equal(4.09, track.elevation.min);
+    assert.equal(71.03999999999998, track.elevation.pos);
+    assert.equal(69.44000000000001, track.elevation.neg);
+    assert.equal(14.148731707317081, track.elevation.avg);
+
+    assert.equal(205, track.points.length);
+
+    track.points.forEach(function (pt) {
+      assert.notEqual(pt.lat, undefined);
+      assert.notEqual(pt.lon, undefined);
+      assert.notEqual(pt.ele, undefined);
+      assert(pt.time == null);
+    });
+  });
+
+  it("should parse routes", function () {
+    let parsedRoutes = parser.routes;
+
+    assert.equal(1, parsedRoutes.length);
+
+    let route = parsedRoutes[0];
+
+    assert.equal("Track", route.name);
+    assert.equal("Bridge", route.cmt);
+    assert.equal("Demo track", route.desc);
+    assert.equal("GPX Parser", route.src);
+    assert.equal("1", route.number);
+    assert.equal("MTB", route.type);
+
+    assert.equal("http://example.com", route.link.href);
+    assert.equal("Author website", route.link.text);
+    assert.equal("Web", route.link.type);
+
+    assert.equal(6955.702190644043, route.distance.total);
+    assert.equal(205, route.distance.cumul.length);
+
+    assert.equal(31.6, route.elevation.max);
+    assert.equal(4.09, route.elevation.min);
+    assert.equal(71.03999999999998, route.elevation.pos);
+    assert.equal(69.44000000000001, route.elevation.neg);
+    assert.equal(14.148731707317081, route.elevation.avg);
+
+    assert.equal(205, route.points.length);
+
+    route.points.forEach(function (pt) {
+      assert.notEqual(pt.lat, undefined);
+      assert.notEqual(pt.lon, undefined);
+      assert.notEqual(pt.ele, undefined);
+      assert(pt.time == null);
+    });
+  });
+
+  it("GetElementValue should be null", function () {
+    let elemValue = parser.getElementValue(parser.xmlSource, "inexistant");
+    assert.equal(null, elemValue);
+  });
+
+  it("should compute slopes", function () {
+    let parserSlopesIdx = new gpxParser();
+
+    parserSlopesIdx.parse(gpxDemo);
+    assert.equal(204, parserSlopesIdx.tracks[0].slopes.length);
+  });
 });
 
-// describe("GeoJSON exporter", function () {
-//   let parser = new gpxParser();
-//   parser.parse(gpxDemo);
-//
-//   let geoJSON = parser.toGeoJSON();
-//   it("should export correct metadata", function () {
-//     assert.equal("FeatureCollection", geoJSON.type);
-//     assert.equal(4, geoJSON.features.length);
-//     assert.deepEqual(geoJSON.properties, parser.metadata);
-//   });
-//
-//   let features = geoJSON.features;
-//
-//   it("should export correct features", function () {
-//     let f0 = features[0];
-//     assert.equal("LineString", f0.geometry.type);
-//     assert.equal(205, f0.geometry.coordinates.length);
-//
-//     f0.geometry.coordinates.forEach(function (pt) {
-//       assert.equal(3, pt.length);
-//     });
-//
-//      assert.equal("Track", f0.properties.name);
-//      assert.equal("Bridge", f0.properties.cmt);
-//      assert.equal("Demo track", f0.properties.desc);
-//     assert.equal("GPX Parser", f0.properties.src);
-//     assert.equal("1", f0.properties.number);
-//     assert.equal("http://example.com", f0.properties.link.href);
-//     assert.equal("Author website", f0.properties.link.text);
-//     assert.equal("Web", f0.properties.link.type);
-//     assert.equal("MTB", f0.properties.type);
-//
-//     let f1 = features[1];
-//     assert.equal("LineString", f1.geometry.type);
-//     assert.equal(205, f1.geometry.coordinates.length);
-//
-//     f1.geometry.coordinates.forEach(function (pt) {
-//       assert.equal(3, pt.length);
-//     });
-//
-//     assert.equal("Track", f1.properties.name);
-//     assert.equal("Bridge", f1.properties.cmt);
-//     assert.equal("Demo track", f1.properties.desc);
-//     assert.equal("GPX Parser", f1.properties.src);
-//     assert.equal("1", f1.properties.number);
-//     assert.equal("http://example.com", f1.properties.link.href);
-//     assert.equal("Author website", f1.properties.link.text);
-//     assert.equal("Web", f1.properties.link.type);
-//     assert.equal("MTB", f1.properties.type);
-//
-//      let f2 = features[2];
-//      let feature2 = {
-//        type: "Feature",
-//        geometry: {
-//          type: "Point",
-//          coordinates: [-1.5153741828293, 47.253146555709, 35],
-//        },
-//        properties: {
-//          name: "Porte de Carquefou",
-//          cmt: "Warning",
-//          desc: "Route",
-//          sym: "Fishing Hot Spot Facility",
-//        },
-//      };
-//      assert.deepEqual(feature2, f2);
-//
-//      let f3 = features[3];
-//      let feature3 = {
-//        type: "Feature",
-//        geometry: {
-//          type: "Point",
-//          coordinates: [-1.5482325613225, 47.235331031612, 20],
-//        },
-//        properties: {
-//          name: "Pont de la Tortière",
-//          cmt: "Bridge",
-//          desc: "Route",
-//          sym: null,
-//        },
-//      };
-//      assert.deepEqual(feature3, f3);
-//   });
-// });
+describe("GeoJSON exporter", function () {
+  let parser = new gpxParser();
+  parser.parse(gpxDemo);
+
+  let geoJSON = parser.toGeoJSON();
+  it("should export correct metadata", function () {
+    assert.equal("FeatureCollection", geoJSON.type);
+    assert.equal(4, geoJSON.features.length);
+    assert.deepEqual(geoJSON.properties, parser.metadata);
+  });
+
+  let features = geoJSON.features;
+
+  it("should export correct features", function () {
+    let f0 = features[0];
+    assert.equal("LineString", f0.geometry.type);
+    assert.equal(205, f0.geometry.coordinates.length);
+
+    f0.geometry.coordinates.forEach(function (pt) {
+      assert.equal(3, pt.length);
+    });
+
+    assert.equal("Track", f0.properties.name);
+    assert.equal("Bridge", f0.properties.cmt);
+    assert.equal("Demo track", f0.properties.desc);
+    assert.equal("GPX Parser", f0.properties.src);
+    assert.equal("1", f0.properties.number);
+    assert.equal("http://example.com", f0.properties.link.href);
+    assert.equal("Author website", f0.properties.link.text);
+    assert.equal("Web", f0.properties.link.type);
+    assert.equal("MTB", f0.properties.type);
+
+    let f1 = features[1];
+    assert.equal("LineString", f1.geometry.type);
+    assert.equal(205, f1.geometry.coordinates.length);
+
+    f1.geometry.coordinates.forEach(function (pt) {
+      assert.equal(3, pt.length);
+    });
+
+    assert.equal("Track", f1.properties.name);
+    assert.equal("Bridge", f1.properties.cmt);
+    assert.equal("Demo track", f1.properties.desc);
+    assert.equal("GPX Parser", f1.properties.src);
+    assert.equal("1", f1.properties.number);
+    assert.equal("http://example.com", f1.properties.link.href);
+    assert.equal("Author website", f1.properties.link.text);
+    assert.equal("Web", f1.properties.link.type);
+    assert.equal("MTB", f1.properties.type);
+
+    let f2 = features[2];
+    let feature2 = {
+      type: "Feature",
+      geometry: {
+        type: "Point",
+        coordinates: [-1.5153741828293, 47.253146555709, 35],
+      },
+      properties: {
+        name: "Porte de Carquefou",
+        cmt: "Warning",
+        desc: "Route",
+        sym: "Fishing Hot Spot Facility",
+      },
+    };
+    assert.deepEqual(feature2, f2);
+
+    let f3 = features[3];
+    let feature3 = {
+      type: "Feature",
+      geometry: {
+        type: "Point",
+        coordinates: [-1.5482325613225, 47.235331031612, 20],
+      },
+      properties: {
+        name: "Pont de la Tortière",
+        cmt: "Bridge",
+        desc: "Route",
+        sym: null,
+      },
+    };
+    assert.deepEqual(feature3, f3);
+  });
+});
